@@ -7,7 +7,7 @@ STR_TO_DATE(time, '%H:%i') > ifnull((Select STR_TO_DATE(time, '%H:%i') from bus 
 and origin = (Select origin from bus where id = busses.id))), STR_TO_DATE('00:00', '%H:%i'))) as "Пассажиров на борту"
 from bus busses order by busses.id;
 
--- There is something in the end
+-- 10-02-2022 Added 13-41
 -- 15-12 This string has been added
 -- 10-02-2022 at 13-37
 -- 14-51 Added with Foldie Origin
