@@ -1,0 +1,10 @@
+-- Максимальный балл по каждому предмету
+Select Subject, MAX(Score) as 'Max score' from Progress GROUP BY Subject ORDER BY Subject;
+
+-- Студентов получило высший балл
+Select Subject, count(*) as 'Students have goten' from Progress a where Score = 
+(Select max(Score) from Progress b where b.Subject = a.Subject) GROUP BY Subject ORDER BY Subject;
+
+-- Получившие максимальную оценку по каждому предмету
+Select Last_name as 'Last name', Subject, Score as 'Max score' from Progress a where Score = 
+(Select MAX(Score) from Progress b where b.Subject = a.Subject GROUP BY Subject) ORDER BY Subject asc;

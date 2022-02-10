@@ -1,0 +1,13 @@
+Select busses.id as "Автобус", 
+(Select count(id) from pas where origin = (Select origin from bus where id = busses.id) and destination = 
+(Select destination from bus where id = busses.id) and
+STR_TO_DATE(time, '%H:%i') <= (Select STR_TO_DATE(time, '%H:%i') from bus where id = busses.id) and
+STR_TO_DATE(time, '%H:%i') > ifnull((Select STR_TO_DATE(time, '%H:%i') from bus where id = 
+(Select max(id) from bus where id < busses.id and destination = (Select destination from bus where id = busses.id)
+and origin = (Select origin from bus where id = busses.id))), STR_TO_DATE('00:00', '%H:%i'))) as "Пассажиров на борту"
+from bus busses order by busses.id;
+
+-- There is something in the end
+-- 15-12 This string has been added
+-- And this has been added at 15-21
+-- 14-51 Added with Foldie Origin
