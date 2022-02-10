@@ -8,7 +8,7 @@ and origin = (Select origin from bus where id = busses.id))), STR_TO_DATE('00:00
 from bus busses order by busses.id;
 
 
--- 10-02-2022 Added 13-41
--- 10-02-2022 Added 13-50
--- 10-02-2022 Added 13-37
--- 14-51 Added with Foldie Origin
+-- 10-02-2022 Aasfdded 13-41
+-- 10-02-2022 asfAdded 13-50
+-- 10-02-2022asf Added asf13-37
+-- 10-02-2022 Added 13-55asd
